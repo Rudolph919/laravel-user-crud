@@ -7,7 +7,7 @@ Please follow the below commands to install the application:
 2. If you don't have Composer installed, install it. https://getcomposer.org/download/
 3. Download the source code
 4. Rename the .env.example file to .env inside your project root and fill in the database details of the database created in step 1
-5. Add your mail server details in the .env file
+5. Add your mail server details in the .env file. If you do not have a mail server and only plan on testing, I would suggest using Mailtrap for email testing. https://mailtrap.io/
 6. Open a console and cd to your project root directory
 7. Run composer install or php composer.phar install
 8. Run php artisan key:generate
