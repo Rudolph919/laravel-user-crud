@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\UserFormRequest;
 use Illuminate\Support\Facades\Validator;
+use App\Notifications\WelcomeNotification;
 
 class UserController extends Controller
 {
@@ -108,6 +109,9 @@ class UserController extends Controller
             Log::error($th);
             return back()->with('error', 'There was an error capturing the interests. Please try again. If the problem persists please contact the system admin');
         }
+
+        //Sends out welcome notification
+        $new_user->notify(new WelcomeNotification($new_user));
 
         return redirect()->route('users.index')->with('success', 'User has been captured successfully');
     }
