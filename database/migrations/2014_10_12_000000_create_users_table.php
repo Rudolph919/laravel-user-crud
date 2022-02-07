@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('mobile_number');
             $table->string('email')->unique();
             $table->dateTime('date_of_birth');
-            $table->integer('language');
+            $table->integer('language')->default(1);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
